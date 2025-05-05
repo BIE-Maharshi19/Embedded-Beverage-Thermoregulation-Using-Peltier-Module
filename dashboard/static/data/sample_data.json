@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2025-04-10T18:00:00",
+    "drink_temp": 40.0,
+    "target_temp": 60,
+    "ambient_temp": 22.4,
+    "mode": "HEATING",
+    "source": "simulated",
+    "session_id": "session_1",
+    "user_action": "SET"
+  },
+  {
+    "timestamp": "2025-04-10T18:02:00",
+    "drink_temp": 41.6,
+    "target_temp": 60,
+    "ambient_temp": 22.4,
+    "mode": "HEATING",
+    "source": "simulated",
+    "session_id": "session_1",
+    "user_action": ""
+  },
+  {
+    "timestamp": "2025-04-10T19:00:00",
+    "drink_temp": 25.0,
+    "target_temp": 10,
+    "ambient_temp": 23.9,
+    "mode": "COOLING",
+    "source": "simulated",
+    "session_id": "session_2",
+    "user_action": "SET"
+  },
+  {
+    "timestamp": "2025-04-10T19:02:00",
+    "drink_temp": 23.4,
+    "target_temp": 10,
+    "ambient_temp": 23.9,
+    "mode": "COOLING",
+    "source": "simulated",
+    "session_id": "session_2",
+    "user_action": ""
+  },
+  {
+    "timestamp": "2025-04-10T20:00:00",
+    "drink_temp": 40.0,
+    "target_temp": 60,
+    "ambient_temp": 21.7,
+    "mode": "HEATING",
+    "source": "simulated",
+    "session_id": "session_3",
+    "user_action": "SET"
+  },
+  {
+    "timestamp": "2025-04-10T20:02:00",
+    "drink_temp": 41.4,
+    "target_temp": 60,
+    "ambient_temp": 21.7,
+    "mode": "HEATING",
+    "source": "simulated",
+    "session_id": "session_3",
+    "user_action": ""
+  }
+]
