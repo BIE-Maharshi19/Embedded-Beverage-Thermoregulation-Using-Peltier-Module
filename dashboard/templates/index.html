@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Siploma Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0/dist/chartjs-plugin-annotation.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="{{ url_for('static', filename='images/logo-02.png') }}" alt="Siploma Logo" class="logo"/>
+      <h1>Siploma Drink Heater/Cooler Smart Dashboard</h1>
+    </header>
+
+    <section class="controls">
+      <div class="temp-row">
+        <div class="temp-input-group">
+          <div class="temp-input-line">
+            <input type="number" id="targetTemp" placeholder="Set Target Temp" oninput="updateTempPreview()" />
+            <select id="tempUnit" onchange="updateTempPreview()">
+              <option value="C">°C</option>
+              <option value="F">°F</option>
+            </select>
+            <button onclick="submitTemp()">Send</button>
+          </div>
+          <div id="tempTooltip" class="tooltip" style="display: none;"></div>
+          <div id="tempPreview" class="preview" style="display: none;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart">
+      <canvas id="tempChart" width="600" height="300"></canvas>
+    </section>
+
+    <div class="filter-row">
+      <label>
+        Session:
+        <select id="sessionFilter" onchange="fetchAndRenderChart()">
+          <option value="all">All Sessions</option>
+        </select>
+      </label>
+
+      <label>
+        Mode:
+        <select id="modeFilter" onchange="fetchAndRenderChart()">
+          <option value="all">All Modes</option>
+          <option value="HEATING">Heating</option>
+          <option value="COOLING">Cooling</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="chart-row">
+      <section class="chart half">
+        <h3>Hardware Performance</h3>
+        <canvas id="performanceChart" width="400" height="300"></canvas>
+      </section>
+
+      <section class="chart half">
+        <h3>User Temperature Preferences</h3>
+        <canvas id="preferencesChart" width="400" height="300"></canvas>
+      </section>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
